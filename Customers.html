@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/asset/Customers.css" />
+    <title>Dashboard admin</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
+              <span class="title">Brand Name</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <span class="icon"
+                ><ion-icon name="home-outline"></ion-icon
+              ></span>
+              <span class="title">Doashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="people-outline"></ion-icon
+              ></span>
+              <span class="title">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="chatbubble-outline"></ion-icon
+              ></span>
+              <span class="title">Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="help-outline"></ion-icon
+              ></span>
+              <span class="title">Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="settings-outline"></ion-icon
+              ></span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="lock-closed-outline"></ion-icon
+              ></span>
+              <span class="title">Password</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="log-out-outline"></ion-icon
+              ></span>
+              <span class="title">Sign Out</span>
+            </a>
+          </li>
+          <li>
+            <a href="noneCss.html">
+              <span class="icon"
+                ><ion-icon name="remove-circle-outline"></ion-icon
+              ></span>
+              <span class="title">Log out Css</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- main -->
+    <div class="main">
+      <div class="topbar">
+        <div class="toggle">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="search">
+          <label for="">
+            <input type="text" placeholder="Search here" />
+            <ion-icon name="search-outline"></ion-icon>
+          </label>
+        </div>
+        <!-- --userImg-- -->
+        <div class="user">
+          <img
+            src="https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg"
+          />
+        </div>
+      </div>
+
+      <div class="details">
+        <!-- order details list -->
+        <div class="customers">
+          <div class="cardHeader">
+            <h2>Customers</h2>
+            <button class="btn">
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </button>
+          </div>
+          <table id="user-table">
+            <thead>
+              <tr>
+                <td>User</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Date</td>
+                <td>Status</td>
+                <td>Edit</td>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Các hàng sẽ được thêm vào động bằng JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- New Customers -->
+      </div>
+    </div>
+
+    <!-- modal -->
+    <div id="modal">
+      <div class="modal-content">
+        <span class="close-button j-close">&times;</span>
+        <h2>Register</h2>
+        <form id="add-form" class="d-flex flex-column">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required />
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- form chỉnh sửa thông tin người dùng -->
+    <div id="modal-change">
+      <div class="modal-content">
+        <span class="close-button j-close">&times;</span>
+        <h2>Chỉnh sửa</h2>
+        <form id="change-form" class="d-flex flex-column">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required />
+          </div>
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn-primary">Change</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- script:link -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./asset/mychart.js"></script>
+    <!-- <script src="./asset/modal.js"></script> -->
+    <script src="./js/const.js"></script>
+    <script src="./js/controller.js"></script>
+    <script src="./js/model.js"></script>
+    <script src="./js/view.js"></script>
+
+    <script>
+      //MenuToggle
+      let toggle = document.querySelector(".toggle");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+
+      toggle.onclick = function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+      };
+
+      //add hovered class in selected list item
+      let list = document.querySelectorAll(".navigation li");
+
+      function activeLink() {
+        list.forEach((item) => {
+          item.classList.remove("");
+        });
+        this.classList.add("hovered");
+      }
+
+      list.forEach((item) => {
+        item.addEventListener("mouseover", activeLink);
+      });
+    </script>
+  </body>
+</html>
